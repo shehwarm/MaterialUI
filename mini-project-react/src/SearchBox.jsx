@@ -12,7 +12,7 @@ export default function SearchBox(){
     const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
 
 
-    let getWeather = async () => {
+    let getWeather = async ({pdateInfo}) => {
         let response = await fetch(`${API_URL}&q=${city}&appid=${API_KEY}`);
         let data = await response.json();
         console.log(data);
@@ -27,23 +27,24 @@ export default function SearchBox(){
             weather: data.weather[0].description,
         };
         console.log(result);
+        return result;
     };
 
     let handleChange = (event) =>{
         setCity(event.target.value);
     };
 
-    let handleSubmit = (event) =>{ 
+    let handleSubmit =  async (event) =>{ 
         event.preventDefault();
         console.log(city);
-        getWeather();
         setCity("");
+        let newInfo = await getWeather({updateInfo});
+        updateInfo(newInfo);
         
     };
 
     return (
         <div className="SearchBox">
-            <h1>Search for the weather</h1>
             <form onSubmit={handleSubmit}>
                 <TextField id="city" label="City Name" variant="outlined" required value={city} onChange={handleChange}/>
                 <br></br><br></br>

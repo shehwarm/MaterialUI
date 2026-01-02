@@ -6,7 +6,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import "./InfoBox.css";
 
-export default function InfoBox() {
+export default function InfoBox({info}) {
 
     const INIT_URL = "https://plus.unsplash.com/premium_photo-1729600377083-bbe558d8b7a6?q=80&w=870&auto=format&fit=crop";
 
@@ -21,8 +21,6 @@ export default function InfoBox() {
 
     return (
         <div className="InfoBox">
-            <h2>Weather Info - {info.city}</h2>
-
             <Card sx={{ maxWidth: 345 }}>
                 <CardMedia
                     sx={{ height: 140 }}
