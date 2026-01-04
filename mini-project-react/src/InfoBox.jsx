@@ -8,7 +8,7 @@ import "./InfoBox.css";
 
 export default function InfoBox({ info }) {
 
-  const INIT_URL =
+  const WIND_URL =
     "https://plus.unsplash.com/premium_photo-1729600377083-bbe558d8b7a6?q=80&w=870&auto=format&fit=crop";
 
   const HOT_URL =
@@ -25,7 +25,7 @@ export default function InfoBox({ info }) {
       <Card sx={{ maxWidth: 345 }}>
         <CardMedia
           sx={{ height: 140 }}
-          image={INIT_URL}
+          image={info.temp <= 20 ? COLD_URL : info.temp >= 30 ? HOT_URL : RAIN_URL}
           title="Weather Image"
         />
 
