@@ -4,6 +4,9 @@ import CardMedia from "@mui/material/CardMedia";
 import CardActions from "@mui/material/CardActions";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import ThunderstormIcon from '@mui/icons-material/Thunderstorm';
+import AcUnitIcon from '@mui/icons-material/AcUnit';
+import SunnyIcon from '@mui/icons-material/Sunny';
 import "./InfoBox.css";
 
 export default function InfoBox({ info }) {
@@ -31,7 +34,7 @@ export default function InfoBox({ info }) {
 
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            {info.city}
+            {info.city} {info.temp >= 30 ? <SunnyIcon/> : info.temp <= 20 ? <AcUnitIcon/> : <ThunderstormIcon/>}
           </Typography>
 
           <Typography variant="body2" color="text.secondary" component="span">
