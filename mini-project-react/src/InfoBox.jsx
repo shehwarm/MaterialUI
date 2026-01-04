@@ -11,6 +11,15 @@ export default function InfoBox({ info }) {
   const INIT_URL =
     "https://plus.unsplash.com/premium_photo-1729600377083-bbe558d8b7a6?q=80&w=870&auto=format&fit=crop";
 
+  const HOT_URL =
+    "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=870&auto=format&fit=crop";   
+
+  const COLD_URL =
+    "https://images.unsplash.com/photo-1608889174673-1f5a4b3b8e2d?q=80&w=870&auto=format&fit=crop";
+
+  const RAIN_URL =
+    "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?q=80&w=870&auto=format&fit=crop";
+  
   return (
     <div className="InfoBox">
       <Card sx={{ maxWidth: 345 }}>
